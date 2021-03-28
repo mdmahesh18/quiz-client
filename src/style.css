@@ -1,0 +1,31 @@
+.form-group{
+    margin: 25px;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+
+label{
+    display: inline-block;
+    clear: left;
+    width: 50px;
+    text-align: left;
+    }
+
+
+input {
+  width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 2px solid #ccc;
+        box-sizing: border-box;
+  }
+
+  button {
+    background-color: Green;
+    color: white;
+    padding: 15px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    width: 100%;
+  }
