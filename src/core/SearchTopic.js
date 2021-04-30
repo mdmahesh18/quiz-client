@@ -5,12 +5,14 @@ import axios from 'axios'
 import {ToastContainer, toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css'
 //import { post } from '../../../server/Routes/Auth'
-//import '../style.css'
+import '../style.css'
 import {authenticate, isAuth} from './helpers'
+require('dotenv').config();
 
-const Signin = ({history}) => {
+
+const SearchTopic = ({history}) => {
 const [values, setValues] = useState({
-email :'',
+TopicID :'',
 password: '',
 buttonText:'Submit'
 });
@@ -29,8 +31,8 @@ event.preventDefault()
 setValues({...values, buttonText :'Submittting'})
 axios ({
 method: 'POST',
-//url: '${process.env.REACT_APP_API}/signin',
-url: 'http://localhost:8000/api/signin',
+url: '${process.env.REACT_APP_API}/signin',
+//url: 'http://localhost:8000/api/signin',
 data: {email, password}
 })
 //console.log('SIGNUP being requested to server', email)
@@ -59,12 +61,12 @@ const signinForm = () => (
 
 < div className="form-group">
     <label className="text-muted"> email</label>
-    <input onChange={handleChange('email')} value = {email} type ="email" className="form-control" enabled ="true"/>
+    <input onChange={handleChange('email')} value = {email} type ="email" classname="form-control"/>
 </div>
 
 < div className="form-group">
     <label className="text-muted"> Password</label>
-    <input onChange={handleChange('password')} value = {password} type ="password" className="form-control" enabled ="true"/>
+    <input onChange={handleChange('password')} value = {password} type ="password" classname="form-control"/>
 </div>
 
 < div className="form-group">
@@ -74,14 +76,13 @@ const signinForm = () => (
 </form>
 );
 
-//{JSON.stringify({name, email, password})}
-
 return (
 <Layout>
- <div className="col-md-6 offset-md-3">
+{JSON.stringify(isAuth())}
+    <div className="col-d-6 offset-md-3">
 <ToastContainer />
 {isAuth()?<Redirect to ="/"/>:null}
-<h1 className = "p-5 text-center"> Signin </h1>
+<h1 className = "p-5"> Signin </h1>
 {signinForm()}
 </div>
 </Layout>
@@ -89,4 +90,3 @@ return (
 )};
 
 export default Signin;
-

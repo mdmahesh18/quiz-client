@@ -1,25 +1,23 @@
 .form-group{
-    margin: 25px;
-    box-sizing: border-box;
+    margin: 10px;
     padding-left: 10px;
 }
 
 label{
     display: inline-block;
     clear: left;
-    width: 50px;
+    width: auto;
     text-align: left;
+    border: width 10px;
     }
 
-
-input {
-  width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 2px solid #ccc;
-        box-sizing: border-box;
-  }
+    
+    input {
+            padding: 1px 1px;
+            margin: 8px 0px;
+            display: inline-block;
+            border: 2px solid #ccc;
+                 }
 
   button {
     background-color: Green;

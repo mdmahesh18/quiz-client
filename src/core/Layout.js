@@ -2,6 +2,9 @@
 import React, {Fragment} from 'react'
 import {Link, withRouter} from 'react-router-dom'
 import {isAuth, signout} from '../auth/helpers'
+import {quizrender} from './quizrender2'
+
+
 
 const Layout = ({children, match, history}) => {
 const isActive = path => {
@@ -11,6 +14,20 @@ if (match.path === path) {
     return {color: '#fff'};
     }
 };
+
+///////////////////earlier
+//{isAuth() && isAuth().role ==='admin' && (
+  //  <li className="nav-item">
+    //    <Link className="nav-link" style= {isActive('/InsertUpdateQuestion')} to = "/InsertUpdateQuestion">
+     //       {isAuth().name} Upload Quiz
+//</Link>
+
+//</li>
+
+//)} 
+
+////////////////////
+
 const nav = ()=> ( 
     <ul className="nav nav-tabs bg-primary">
         <li className="nav-item">
@@ -33,28 +50,75 @@ const nav = ()=> (
       {isAuth() && isAuth().role ==='admin' && (
                 <li className="nav-item">
                     <Link className="nav-link" style= {isActive('/admin')} to = "/admin">
-                        {isAuth().name}
+                        {isAuth().name} Profile Update
+       </Link>
+       
+        </li> )} 
+
+        {isAuth() && isAuth().role ==='admin' && (
+                <li className="nav-item">
+                    <Link className="nav-link" style= {isActive('/AdminCreateNewQuizTopic')} to = "/AdminCreateNewQuizTopic">
+                         Create New Quiz Topic
        </Link>
        
         </li>
           
     )} 
 
+        {isAuth() && isAuth().role ==='admin' && (
+                <li className="nav-item">
+                    <Link className="nav-link" style= {isActive('/AdminViewQuiz')} to = "/AdminViewQuiz">
+                         View Quiz
+       </Link>
+       
+        </li>
+          
+         )} 
+
+        {isAuth() && isAuth().role ==='admin' && (
+                <li className="nav-item">
+                    <Link className="nav-link" style= {isActive('/AdminEditQuiz')} to = "/AdminEditQuiz">
+                        Edit Quiz
+       </Link>
+       
+        </li>
+          
+         )} 
+
+
        {isAuth() && isAuth().role ==='subscriber' && (
                 <li className="nav-item">
                     <Link className="nav-link" style= {isActive('/private')} to = "/private">
-                        {isAuth().name}
-       </Link>  
+                        {isAuth().name} Profile Update
+
+                        </Link>   </li>)}
+                       
+        {isAuth() && isAuth().role ==='subscriber' && (              
+                       
+                    <li className="nav-item">
+                    <Link className="nav-link" style= {isActive('/quizrender')} to = "/quizrender">
+                        {isAuth().name} Quizrender
+
+       </Link> </li> )}
+
+       {isAuth() && isAuth().role ==='subscriber' && (              
+                       
+                       <li className="nav-item">
+                       <Link className="nav-link" style= {isActive('/paidsubscribe')} to = "/paidsubscribe">
+                           {isAuth().name} Subscribe
+   
+          </Link>  
        
         </li>
           
     )}          
 
-
       {isAuth() && (
                 <li className="nav-item">
        <span className="nav-link" 
-       style={{cursor: 'pointer', color: '##fff'}} 
+      // style={{cursor: 'pointer', color: '##fff'}} 
+         style={{cursor: 'pointer', color: 'red'}} 
+
        onClick={()=> {
            signout(()=> {
 

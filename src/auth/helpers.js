@@ -7,7 +7,6 @@ if (window !== undefined) {
 cookie.set(key, value, {expires:1})
 }}
 
-
 //remove from cookie
 
 export const removeCookie = (key) => {
@@ -52,13 +51,13 @@ next()
 export const isAuth = () => {
 if (window !=='undefined') {
 const cookieChecked = getCookie('token')
-console.log(cookieChecked)
+//console.log(cookieChecked)
 if (cookieChecked) {
-    console.log('INSIDE COOKIECHECKED')
+    //console.log('INSIDE COOKIECHECKED')
     if (localStorage.getItem('user')) {
         return JSON.parse(localStorage.getItem('user'))
     } else { 
-        console.log('not INSIDE COOKIECHECKED')
+       // console.log('not INSIDE COOKIECHECKED')
         return false;
      }
 }

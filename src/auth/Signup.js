@@ -51,18 +51,19 @@ const signupForm = () => (
 <form> 
 < div className="form-group">
     <label className="text-muted"> Name</label>
-    <input onChange={handleChange('name')} value = {name} type ="text" classname="form-control"/>
+    <input onChange={handleChange('name')} value = {name} type ="text" className="form-control" enabled ="true"/>
 </div>
 
 < div className="form-group">
     <label className="text-muted"> email</label>
-    <input onChange={handleChange('email')} value = {email} type ="email" classname="form-control"/>
+    <input onChange={handleChange('email')} value = {email} type ="email" className="form-control" enabled ="true"/>
 </div>
 
 < div className="form-group">
     <label className="text-muted"> Password</label>
-    <input onChange={handleChange('password')} value = {password} type ="password" classname="form-control"/>
+    <input onChange={handleChange('password')} value = {password} type ="password" className="form-control" enabled ="true"/>
 </div>
+
 
 < div className="form-group">
        <button className="btn btn-primary" onClick={clickSubmit}> {buttonText}</button> 
@@ -71,11 +72,12 @@ const signupForm = () => (
 </form>
 );
 
+//{JSON.stringify({name, email, password})}
 return (
 <Layout>
     <div className="col-d-6 offset-md-3">
 <ToastContainer />
-{JSON.stringify({name, email, password})}
+
 {isAuth()?<Redirect to ="/"/>:null}
 <h1 className = "p-5"> Signup </h1>
 {signupForm()}
