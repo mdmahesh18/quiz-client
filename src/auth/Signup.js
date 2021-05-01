@@ -7,6 +7,7 @@ import {ToastContainer, toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css'
 //import { post } from '../../../server/Routes/Auth'
 import '../style.css'
+require('dotenv').config();
 
 const Signup = () => {
 const [values, setValues] = useState({
@@ -30,7 +31,7 @@ event.preventDefault()
 setValues({...values, buttonText :'Submittting'})
 axios ({
 method: 'POST',
-url: '${process.env.REACT_APP_API}/signup',
+url: `${process.env.REACT_APP_API}/signup`,
 //url: 'http://localhost:8000/api/signup',
 
 //url: 'http://161.35.6.245:8000/api/signup',
