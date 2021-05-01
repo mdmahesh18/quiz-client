@@ -31,7 +31,10 @@ setValues({...values, buttonText :'Submittting'})
 axios ({
 method: 'POST',
 //url: '${process.env.REACT_APP_API}/signup',
-url: 'http://localhost:8000/api/signup',
+//url: 'http://localhost:8000/api/signup',
+
+url: 'http://127.0.0.1:8000/api/signup',
+
 data: {name, email, password}
 })
 //console.log('SIGNUP being requested to server', email)
