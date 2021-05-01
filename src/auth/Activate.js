@@ -5,6 +5,7 @@ import axios from 'axios'
 import {ToastContainer, toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css'
 import jwt from 'jsonwebtoken'
+require('dotenv').config();
 //import { post } from '../../../server/Routes/Auth'
 import '../style.css'
 
