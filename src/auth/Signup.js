@@ -33,7 +33,7 @@ method: 'POST',
 //url: '${process.env.REACT_APP_API}/signup',
 //url: 'http://localhost:8000/api/signup',
 
-url: 'http://127.0.0.1:8000/api/signup',
+url: 'http://161.35.6.245:8000/api/signup',
 
 data: {name, email, password}
 })
