@@ -39,7 +39,7 @@ console.log('in clicksubmit of account activation' )
 setValues({...values, buttonText :'Submittting'})
 axios ({
 method: 'POST',
-url: '${process.env.REACT_APP_API}/account-activation',
+url: `${process.env.REACT_APP_API}/account-activation`,
 //url: 'http://localhost:8000/api/account-activation',
 data: {token}
 })
