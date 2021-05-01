@@ -84,6 +84,9 @@ return (
 {isAuth()?<Redirect to ="/"/>:null}
 <h1 className = "p-5 text-center"> Signin </h1>
 {signinForm()}
+<Link to="/auth/password/forgot" className="btn btn-sm btn-outline-danger">
+                    Forgot Password
+                </Link>
 </div>
 </Layout>
 
